@@ -19,6 +19,32 @@
 		}
 
 
+		//report
+		public static function getReport($limit, $page){
+			$pre = Handler::$con->prepare( Barang::getReport );
+			$pre->bindValue(1, $limit, PDO::PARAM_INT );
+			$pre->bindValue(2, $page, PDO::PARAM_INT );
+			$pre->execute();
+
+			return $pre->fetchAll(PDO::FETCH_ASSOC);
+		}
+
+		public static function getReportByDate( $date ){
+			$pre = Handler::$con->prepare( Barang::getReportByDate );
+			$pre->bindValue(1, $date, PDO::PARAM_STR );
+			$pre->execute();
+
+			return $pre->fetchAll(PDO::FETCH_ASSOC);
+		}
+
+		public static function getDate()
+		{
+			$pre = Handler::$con->prepare( Barang::getReportDate );
+			$pre->execute();
+			return $pre->fetchAll(PDO::FETCH_ASSOC);
+		}
+
+
 		//penggunaan
 
 		public static function getBarangDigunakan( $id_barang_digunakan ){

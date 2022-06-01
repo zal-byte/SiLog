@@ -37,6 +37,9 @@
 		const updatePassword = 'UPDATE admin SET password=? WHERE username=?';
 
 
+		const getReportByDate = "SELECT * FROM barang_digunakan INNER JOIN barang USING (id_barang) WHERE barang_digunakan.tanggal = ? ORDER BY barang_digunakan.id_barang_digunakan DESC";
+		const getReportDate = "SELECT DISTINCT tanggal FROM barang_digunakan";
+		const getReport = "SELECT * FROM barang_digunakan INNER JOIN barang USING (id_barang) ORDER BY id_barang_digunakan DESC LIMIT ?, ?";
 	}
 
 

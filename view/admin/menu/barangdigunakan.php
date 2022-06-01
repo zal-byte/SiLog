@@ -52,6 +52,7 @@
 		</form>
 	</div>
 </nav>
+
 <script type="text/javascript" src="../../asset/pub_js/jquery.min.js"></script>
 
 <?php

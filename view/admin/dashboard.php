@@ -54,7 +54,7 @@ if(!isset($_SESSION['login'])){header('location: index.php');}
                         </a>
                     </li>
                     <li class="nav-item">
-                    	<a href="#" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Cetak Laporan">
+                    	<a href="?view=report" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Cetak Laporan">
                     		<i class="bi-card-list fa-2x"></i>
                     	</a>
                     </li>
@@ -81,6 +81,8 @@ if(!isset($_SESSION['login'])){header('location: index.php');}
                         include 'menu/databarang.php';
                     }else if(isset($_GET['d_search'])){
                         include 'menu/barangdigunakan.php';
+                    }else if(isset($_GET['select_date'])){
+                        include 'menu/report.php';
                     }
                     else{
                         if(isset($_GET['view'])){
@@ -99,6 +101,9 @@ if(!isset($_SESSION['login'])){header('location: index.php');}
                                 break;
                                 case 'userprofile':
                                 include 'menu/userprofile.php';
+                                break;
+                                case 'report':
+                                include 'menu/report.php';
                                 break;
                                 default:
                                 include 'menu/mainmenu.php';
